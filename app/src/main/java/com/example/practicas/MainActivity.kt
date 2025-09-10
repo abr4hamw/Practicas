@@ -74,12 +74,12 @@ fun MainScreen(items : List<Color>) {
             )
         }
         Row(){
-            Texto("Clorox",
-                Color.Blue,
+            Texto("Puente",
+                Color.Magenta,
                 Color.White)
             Spacer(modifier = Modifier.padding(10.dp))
-            Texto ("Precio",
-                Color.Red,
+            Texto ("Morado",
+                Color.Black,
                 Color.White)
         }
         Spacer(modifier = Modifier.padding(20.dp))
