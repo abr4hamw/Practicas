@@ -53,10 +53,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+var res = ""//by remember { mutableStateOf("") }
+var txtoH = ""
+var n1 = 0.0f
+var n2 = 0.0f
+var isOper = 0
+var queOper = ""
+
+var queOper2 = ""
+var res1 = 0.0f
+
 @Composable
 fun calculadora(){
     var txto by remember { mutableStateOf("") }
-    var res by remember { mutableStateOf("") }
     Column (
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -87,7 +96,10 @@ fun calculadora(){
 
         Row {
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "7";
+                    txtoH += "7"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("7")
                 }
@@ -95,7 +107,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "8";
+                    txtoH += "8"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("8")
                 }
@@ -103,7 +118,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "9";
+                    txtoH += "9"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("9")
                 }
@@ -111,7 +129,19 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    isOper++
+                    if(n1 == 0.0f) {
+                        n1 = txto.toFloat();
+                        queOper = "div"
+                        txtoH = ""
+                    }
+                    else {
+                        queOper2 = "div"
+                        operacion(queOper)
+                    }
+                    txto += "/";
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)){
                     diseño("/")
                 }
@@ -121,7 +151,10 @@ fun calculadora(){
 
         Row {
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "4";
+                    txtoH += "4"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("4")
                 }
@@ -129,7 +162,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "5";
+                    txtoH += "5"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("5")
                 }
@@ -137,7 +173,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "6";
+                    txtoH += "6"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("6")
                 }
@@ -145,7 +184,19 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    isOper++
+                    if(n1 == 0.0f) {
+                        n1 = txto.toFloat();
+                        queOper = "mul"
+                        txtoH = ""
+                    }
+                    else {
+                        queOper2 = "mul"
+                        operacion(queOper)
+                    }
+                    txto += "x";
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)){
                     diseño("x")
                 }
@@ -155,7 +206,10 @@ fun calculadora(){
 
         Row {
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "1";
+                    txtoH += "1"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("1")
                 }
@@ -163,7 +217,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "2";
+                    txtoH += "2"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("2")
                 }
@@ -171,7 +228,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "3";
+                    txtoH += "3"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("3")
                 }
@@ -179,7 +239,19 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    isOper++
+                    if(n1 == 0.0f) {
+                        n1 = txto.toFloat();
+                        queOper = "res"
+                        txtoH = ""
+                    }
+                    else {
+                        queOper2 = "res"
+                        operacion(queOper)
+                    }
+                    txto += "-";
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)){
                     diseño("-")
                 }
@@ -189,7 +261,10 @@ fun calculadora(){
 
         Row {
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += "0";
+                    txtoH += "0"
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño("0")
                 }
@@ -197,7 +272,10 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto += ".";
+                    txtoH += "."
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Black)){
                     diseño(".")
                 }
@@ -205,17 +283,48 @@ fun calculadora(){
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    isOper++
+                    if(n1 == 0.0f) {
+                        n1 = txto.toFloat();
+                        queOper = "sum"
+                        txtoH = ""
+                    }
+                    else {
+                        queOper2 = "sum"
+                        operacion(queOper)
+                    }
+                    txto += "+";
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)){
-                    diseño("D")
+                    diseño("+")
                 }
             }
             Spacer(modifier = Modifier.padding(5.dp))
 
             Column {
-                OutlinedButton( onClick = {},
-                    colors = ButtonDefaults.buttonColors(containerColor = Color.LightGray)){
-                    diseño("+")
+                OutlinedButton(
+                    onClick = {
+                        n2 = txtoH.toFloat()
+                        when(queOper){
+                            "div" -> res1 = n1 / n2
+                            "mul" -> res1 = n1 * n2
+                            "res" -> res1 = n1-n2
+                            "sum" -> res1 = n1+n2
+                        }
+                        res = res1.toString()
+                        txto = "";
+                        txtoH = ""
+                        n1 = 0.0f
+                        n2 = 0.0f
+                        isOper = 0
+                        queOper = ""
+                        res1 = 0.0f
+                        queOper2 = ""
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Cyan)
+                ) {
+                    diseño("=")
                 }
             }
         }
@@ -223,19 +332,19 @@ fun calculadora(){
 
         Row {
             Column {
-                OutlinedButton( onClick = {},
+                OutlinedButton( onClick = {
+                    txto = "";
+                    txtoH = ""
+                    n1 = 0.0f
+                    n2 = 0.0f
+                    isOper = 0
+                    queOper = ""
+                    res1 = 0.0f
+                    res = ""
+                    queOper2 = ""
+                },
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Red)){
                     diseño("AC")
-                }
-            }
-            Spacer(modifier = Modifier.padding(5.dp))
-
-            Column {
-                OutlinedButton(
-                    onClick = {},
-                    colors = ButtonDefaults.buttonColors(containerColor = Color.Cyan)
-                ) {
-                    diseño("=")
                 }
             }
         }
@@ -249,4 +358,26 @@ fun diseño(numero: String){
         fontSize = 55.sp,
         color = Color.White
     )
+}
+
+fun operacion(tipo: String){
+    /*if(isOper == 1){
+        txtoH = ""
+        queOper = tipo
+        isOper ++
+    }*/
+    if (isOper == 2){
+        n2 = txtoH.toFloat()
+        txtoH = ""//////////////
+        when(queOper){
+            "div" -> res1 = n1 / n2
+            "mul" -> res1 = n1 * n2
+            "res" -> res1 = n1-n2
+            "sum" -> res1 = n1+n2
+        }
+        n1 = res1
+        res = res1.toString()
+        isOper = 1
+        queOper = queOper2
+    }
 }
