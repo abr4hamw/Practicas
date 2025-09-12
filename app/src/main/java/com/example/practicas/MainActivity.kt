@@ -53,6 +53,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 var res = ""//by remember { mutableStateOf("") }
 var txtoH = ""
 var n1 = 0.0f
