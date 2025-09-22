@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.practicas.navigation.NavManager
 import com.example.practicas.ui.theme.PracticasTheme
 import com.example.practicas.view.HomeView
 
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PracticasTheme {
-                HomeView()
+                NavManager()
             }
         }
     }
