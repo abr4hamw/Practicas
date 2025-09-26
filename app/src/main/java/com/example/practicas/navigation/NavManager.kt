@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.practicas.view.AFCView
 import com.example.practicas.view.DetailsView
 import com.example.practicas.view.HomeView
 import com.example.practicas.view.SplashScreen
@@ -30,6 +31,9 @@ fun NavManager(){
         }
         composable("Splash"){
             SplashScreen(navController)
+        }
+        composable ("AFC"){
+            AFCView(navController)
         }
 
     }
