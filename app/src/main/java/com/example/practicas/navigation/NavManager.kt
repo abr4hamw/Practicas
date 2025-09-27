@@ -11,6 +11,7 @@ import androidx.navigation.navArgument
 import com.example.practicas.view.AFCView
 import com.example.practicas.view.DetailsView
 import com.example.practicas.view.HomeView
+import com.example.practicas.view.NFCView
 import com.example.practicas.view.SplashScreen
 
 
@@ -20,6 +21,7 @@ fun NavManager(){
 
     NavHost(navController = navController,
         startDestination = "Splash"){
+
         composable("Home"){
             HomeView(navController)
         }
@@ -34,6 +36,9 @@ fun NavManager(){
         }
         composable ("AFC"){
             AFCView(navController)
+        }
+        composable ("NFC"){
+            NFCView(navController)
         }
 
     }

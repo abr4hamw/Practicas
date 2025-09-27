@@ -35,13 +35,13 @@ import com.example.practicas.R
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun AFCView(navController: NavController){
+fun NFCView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar("AFC") },
+                title = { TitleBar("NFC") },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
+                    containerColor = Color.Blue
                 )
                 ,navigationIcon= {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
@@ -51,21 +51,20 @@ fun AFCView(navController: NavController){
             )
         }
     ){
-        ContentAFCView(navController)
+        ContentNFCView(navController)
     }
 }
 
 @Composable
-fun ContentAFCView(navController: NavController){
+fun ContentNFCView(navController: NavController){
     Column (verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()){
 
         Row (
-            modifier = Modifier//.background(color = Color.Red)
+            modifier = Modifier
                 .padding(70.dp)
-                .fillMaxWidth())
-        {}
+                .fillMaxWidth()) {}
 
         Row (modifier = Modifier.fillMaxWidth()
             .background(color = Color.Black),
@@ -84,7 +83,7 @@ fun ContentAFCView(navController: NavController){
 
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Blue)) {
-                Imagenes(R.drawable.chargers)
+                Imagen(R.drawable.chargers)
             }
         }
 
@@ -93,7 +92,7 @@ fun ContentAFCView(navController: NavController){
 
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Magenta)) {
-                Imagenes(R.drawable.ravens)
+                Imagen(R.drawable.ravens)
             }
         }
 
@@ -102,7 +101,7 @@ fun ContentAFCView(navController: NavController){
 
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Black)) {
-                Imagenes(R.drawable.steelers)
+                Imagen(R.drawable.steelers)
             }
         }
 
@@ -111,14 +110,14 @@ fun ContentAFCView(navController: NavController){
 
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Red)){
-                Imagenes(R.drawable.ck)
+                Imagen(R.drawable.ck)
             }
         }
     }
 }
 
 @Composable
-fun Imagenes(id: Int){
+fun Imagen (id: Int){
     Image(
         painter = painterResource(id),
         contentDescription = "",
