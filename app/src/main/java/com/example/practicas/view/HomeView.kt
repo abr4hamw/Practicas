@@ -63,7 +63,7 @@ fun ContentHomeView(navController: NavController){
         Row (modifier = Modifier.background(color = Color.Red)){
             OutlinedButton(onClick = {
                 navController.navigate("AFC")
-            }, shape = RectangleShape) {
+            }, shape = RectangleShape){
                 Image(
                     painter = painterResource(id= R.drawable.afc),
                     contentDescription = ""
@@ -109,7 +109,7 @@ fun ContentHomeView(navController: NavController){
         Row (modifier = Modifier.background(color = Color.Blue)
             .padding(10.dp)){
             OutlinedButton(onClick = {
-                navController.navigate("Detail/${id}")
+                navController.navigate("NFC")
             }, shape = RectangleShape) {
                 Image(
                     painter = painterResource(id= R.drawable.nfc),
