@@ -32,6 +32,7 @@ import com.example.practicas.components.MainIconButton
 import com.example.practicas.components.TitleBar
 import com.example.practicas.R
 import com.example.practicas.components.Imagenes
+import com.example.practicas.components.equipos
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -79,44 +80,13 @@ fun ContentNFCView(navController: NavController){
             )
         }
 
-        Row (modifier = Modifier.padding(30.dp)) {
-            OutlinedButton(onClick = {
-                val id = 5
-                navController.navigate("SplEnd/${id}")
-            }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Magenta)) {
-                Imagenes(R.drawable.vk)
-            }
-        }
+        equipos(navController,5,Color.Magenta,R.drawable.vk)
 
-        Row (modifier = Modifier.padding(10.dp)) {
-            OutlinedButton(onClick = {
-                val id = 6
-                navController.navigate("SplEnd/${id}")
-            }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Red)) {
-                Imagenes(R.drawable.sf)
-            }
-        }
+        equipos(navController,6,Color.Red,R.drawable.sf)
 
-        Row (modifier = Modifier.padding(10.dp)) {
-            OutlinedButton(onClick = {
-                val id = 7
-                navController.navigate("SplEnd/${id}")
-            }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Green)) {
-                Imagenes(R.drawable.gb)
-            }
-        }
+        equipos(navController,7,Color.Green,R.drawable.gb)
 
-        Row (modifier = Modifier.padding(10.dp)) {
-            OutlinedButton(onClick = {
-                val id = 8
-                navController.navigate("SplEnd/${id}")
-            }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Blue)){
-                Imagenes(R.drawable.cowb)
-            }
-        }
+        equipos(navController,8,Color.Blue,R.drawable.cowb)
+
     }
 }
