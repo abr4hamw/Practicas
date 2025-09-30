@@ -30,28 +30,28 @@ import com.example.practicas.components.TitleBar
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun KCView(navController: NavController){
+fun VKView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar("Chiefs") },
+                title = { TitleBar("Vikings") },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
+                    containerColor = Color.Magenta
                 )
                 ,navigationIcon= {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
-                        navController.navigate("AFC")
+                        navController.navigate("NFC")
                     }
                 }
             )
         }
     ){
-        ContentKCView(navController)
+        ContentVKView(navController)
     }
 }
 
 @Composable
-fun ContentKCView(navController: NavController){
+fun ContentVKView(navController: NavController){
 
     Column (
         verticalArrangement = Arrangement.Top,
@@ -63,7 +63,7 @@ fun ContentKCView(navController: NavController){
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            ImagenPrincipal(R.drawable.chiefss)
+            ImagenPrincipal(R.drawable.vks)
         }
 
         Row (
@@ -71,21 +71,21 @@ fun ContentKCView(navController: NavController){
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            TextView("Kansas City")
+            TextView("Minnesota")
         }
 
-        RC("Año: ", "1960")
+        RC("Año: ", "1961")
 
-        RC("División: ", "Oeste")
+        RC("División: ", "Norte")
 
-        RC("Estadio: ", "Arrowhead ")
+        RC("Estadio: ", "U.S. Bank")
 
         Space(20)
 
         Ro("Touch Downs", 1)
 
-        Ro("Priest holms", 2)
+        Ro("Cris Carter", 2)
 
-        Ro("83", 2)
+        Ro("110", 2)
     }
 }

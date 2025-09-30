@@ -115,7 +115,7 @@ fun ContentNFCView(navController: NavController){
                 navController.navigate("SplEnd/${id}")
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Blue)){
-                Imagenes(R.drawable.cwb)
+                Imagenes(R.drawable.cowb)
             }
         }
     }

@@ -10,14 +10,18 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.practicas.view.AFCView
 import com.example.practicas.view.ChargersView
+import com.example.practicas.view.CowBView
+import com.example.practicas.view.GBView
 import com.example.practicas.view.HomeView
 import com.example.practicas.view.KCView
 import com.example.practicas.view.NFCView
 import com.example.practicas.view.RavensView
+import com.example.practicas.view.SFView
 import com.example.practicas.view.SplashEnd
 import com.example.practicas.view.SplashInter
 import com.example.practicas.view.SplashScreen
 import com.example.practicas.view.SteelersView
+import com.example.practicas.view.VKView
 
 
 @Composable
@@ -62,6 +66,18 @@ fun NavManager(){
         }
         composable ("KC"){
             KCView(navController)
+        }
+        composable ("VK"){
+            VKView(navController)
+        }
+        composable ("SF"){
+            SFView(navController)
+        }
+        composable ("GB"){
+            GBView(navController)
+        }
+        composable ("CowB"){
+            CowBView(navController)
         }
 
     }

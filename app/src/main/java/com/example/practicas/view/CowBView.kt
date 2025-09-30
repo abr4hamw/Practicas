@@ -30,28 +30,28 @@ import com.example.practicas.components.TitleBar
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun KCView(navController: NavController){
+fun CowBView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar("Chiefs") },
+                title = { TitleBar("Cowboys") },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
+                    containerColor = Color.Blue
                 )
                 ,navigationIcon= {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
-                        navController.navigate("AFC")
+                        navController.navigate("NFC")
                     }
                 }
             )
         }
     ){
-        ContentKCView(navController)
+        ContentCowBView(navController)
     }
 }
 
 @Composable
-fun ContentKCView(navController: NavController){
+fun ContentCowBView(navController: NavController){
 
     Column (
         verticalArrangement = Arrangement.Top,
@@ -63,7 +63,7 @@ fun ContentKCView(navController: NavController){
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            ImagenPrincipal(R.drawable.chiefss)
+            ImagenPrincipal(R.drawable.cowbs)
         }
 
         Row (
@@ -71,21 +71,21 @@ fun ContentKCView(navController: NavController){
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            TextView("Kansas City")
+            TextView("Dallas Texas")
         }
 
         RC("Año: ", "1960")
 
-        RC("División: ", "Oeste")
+        RC("División: ", "Este")
 
-        RC("Estadio: ", "Arrowhead ")
+        RC("Estadio: ", "AT&T")
 
         Space(20)
 
         Ro("Touch Downs", 1)
 
-        Ro("Priest holms", 2)
+        Ro("Emmitt Smith", 2)
 
-        Ro("83", 2)
+        Ro("164", 2)
     }
 }

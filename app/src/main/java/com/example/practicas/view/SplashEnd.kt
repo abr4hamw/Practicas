@@ -24,7 +24,7 @@ fun SplashEnd(navController: NavController, id: Int) {
             id == 2 -> "Ravens"
             id == 3 -> "Steelers"
             id == 4 -> "KC"
-            id == 5 -> "VKNGS"
+            id == 5 -> "VK"
             id == 6 -> "SF"
             id == 7 -> "GB"
             id == 8 -> "CowB"
