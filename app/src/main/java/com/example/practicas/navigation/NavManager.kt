@@ -9,10 +9,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.practicas.view.AFCView
-import com.example.practicas.view.DetailsView
+import com.example.practicas.view.ChargersView
 import com.example.practicas.view.HomeView
+import com.example.practicas.view.KCView
 import com.example.practicas.view.NFCView
+import com.example.practicas.view.RavensView
+import com.example.practicas.view.SplashEnd
+import com.example.practicas.view.SplashInter
 import com.example.practicas.view.SplashScreen
+import com.example.practicas.view.SteelersView
 
 
 @Composable
@@ -25,12 +30,6 @@ fun NavManager(){
         composable("Home"){
             HomeView(navController)
         }
-        composable("Detail/{id}",arguments =
-            listOf(navArgument("id")
-            {type= NavType.IntType })){
-            val id=it.arguments?.getInt("id")?:0
-            DetailsView(navController,id)
-        }
         composable("Splash"){
             SplashScreen(navController)
         }
@@ -39,6 +38,30 @@ fun NavManager(){
         }
         composable ("NFC"){
             NFCView(navController)
+        }
+        composable ("SplIn/{id}",arguments =
+            listOf(navArgument("id")
+            {type= NavType.IntType })){
+            val id=it.arguments?.getInt("id")?:0
+            SplashInter(navController,id)
+        }
+        composable("SplEnd/{id}", arguments =
+            listOf(navArgument("id")
+            {type= NavType.IntType})) {
+            val id=it.arguments?.getInt("id")?:0
+            SplashEnd(navController,id)
+        }
+        composable ("Chargers"){
+            ChargersView(navController)
+        }
+        composable ("Ravens"){
+            RavensView(navController)
+        }
+        composable ("Steelers"){
+            SteelersView(navController)
+        }
+        composable ("KC"){
+            KCView(navController)
         }
 
     }

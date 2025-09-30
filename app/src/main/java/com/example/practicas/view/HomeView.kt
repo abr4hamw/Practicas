@@ -61,8 +61,9 @@ fun ContentHomeView(navController: NavController){
             .fillMaxWidth()){ }
 
         Row (modifier = Modifier.background(color = Color.Red)){
+            val id = 1
             OutlinedButton(onClick = {
-                navController.navigate("AFC")
+                navController.navigate("SplIn/${id}")//"AFC")
             }, shape = RectangleShape){
                 Image(
                     painter = painterResource(id= R.drawable.afc),
@@ -108,8 +109,9 @@ fun ContentHomeView(navController: NavController){
 
         Row (modifier = Modifier.background(color = Color.Blue)
             .padding(10.dp)){
+            val id = 2
             OutlinedButton(onClick = {
-                navController.navigate("NFC")
+                navController.navigate("SplIn/${id}")//"NFC")
             }, shape = RectangleShape) {
                 Image(
                     painter = painterResource(id= R.drawable.nfc),

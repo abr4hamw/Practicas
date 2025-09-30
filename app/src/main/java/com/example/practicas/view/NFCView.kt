@@ -31,6 +31,7 @@ import androidx.navigation.NavController
 import com.example.practicas.components.MainIconButton
 import com.example.practicas.components.TitleBar
 import com.example.practicas.R
+import com.example.practicas.components.Imagenes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -45,7 +46,7 @@ fun NFCView(navController: NavController){
                 )
                 ,navigationIcon= {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
-                        navController.popBackStack()
+                        navController.navigate("Home")
                     }
                 }
             )
@@ -80,47 +81,42 @@ fun ContentNFCView(navController: NavController){
 
         Row (modifier = Modifier.padding(30.dp)) {
             OutlinedButton(onClick = {
-
-            }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Blue)) {
-                Imagen(R.drawable.chargers)
-            }
-        }
-
-        Row (modifier = Modifier.padding(10.dp)) {
-            OutlinedButton(onClick = {
-
+                val id = 5
+                navController.navigate("SplEnd/${id}")
             }, shape = RectangleShape,
                 modifier = Modifier.background(color = Color.Magenta)) {
-                Imagen(R.drawable.ravens)
+                Imagenes(R.drawable.vk)
             }
         }
 
         Row (modifier = Modifier.padding(10.dp)) {
             OutlinedButton(onClick = {
-
+                val id = 6
+                navController.navigate("SplEnd/${id}")
             }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Black)) {
-                Imagen(R.drawable.steelers)
+                modifier = Modifier.background(color = Color.Red)) {
+                Imagenes(R.drawable.sf)
             }
         }
 
         Row (modifier = Modifier.padding(10.dp)) {
             OutlinedButton(onClick = {
-
+                val id = 7
+                navController.navigate("SplEnd/${id}")
             }, shape = RectangleShape,
-                modifier = Modifier.background(color = Color.Red)){
-                Imagen(R.drawable.ck)
+                modifier = Modifier.background(color = Color.Green)) {
+                Imagenes(R.drawable.gb)
+            }
+        }
+
+        Row (modifier = Modifier.padding(10.dp)) {
+            OutlinedButton(onClick = {
+                val id = 8
+                navController.navigate("SplEnd/${id}")
+            }, shape = RectangleShape,
+                modifier = Modifier.background(color = Color.Blue)){
+                Imagenes(R.drawable.cwb)
             }
         }
     }
-}
-
-@Composable
-fun Imagen (id: Int){
-    Image(
-        painter = painterResource(id),
-        contentDescription = "",
-        modifier = Modifier.size(width= 280.dp, height = 130.dp)
-    )
 }

@@ -1,76 +1,91 @@
 package com.example.practicas.view
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.practicas.components.MainButton
+import com.example.practicas.R
+import com.example.practicas.components.ImagenPrincipal
 import com.example.practicas.components.MainIconButton
+import com.example.practicas.components.RC
+import com.example.practicas.components.Ro
 import com.example.practicas.components.Space
 import com.example.practicas.components.TextView
 import com.example.practicas.components.TitleBar
-import com.example.practicas.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun DetailsView(navController: NavController,id:Int){
+fun KCView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar("DetailsView") },
+                title = { TitleBar("Chiefs") },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color.Red
                 )
                 ,navigationIcon= {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
-                        navController.popBackStack()
+                        navController.navigate("AFC")
                     }
                 }
             )
         }
     ){
-        ContentDetailView(navController,id)
+        ContentKCView(navController)
     }
-
 }
 
 @Composable
-fun ContentDetailView(navController: NavController,id: Int) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
+fun ContentKCView(navController: NavController){
 
-        TextView(texto="Detail View")
-        Space(espacio = 20)
-        TextView (texto=id.toString())
-        MainButton(
-            name="Return Home",
-            backColor = Color.Blue,
-            color = Color.White
-        ) {
-            navController.navigate("Home")
+    Column (
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ){
+        Space(80)
+        Row (
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ){
+            ImagenPrincipal(R.drawable.steelerss)
         }
+
+        Row (
+            modifier = Modifier.padding(40.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ){
+            TextView("Kansas City")
+        }
+
+        RC("Año: ", "1960")
+
+        RC("División: ", "Oeste")
+
+        RC("Estadio: ", "Arrowhead ")
+
+        Space(20)
+
+        Ro("Touch Downs", 1)
+
+        Ro("Priest holms", 2)
+
+        Ro("83", 2)
     }
 }
