@@ -6,39 +6,25 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.Navigator
 import com.example.practicas.R
-import com.example.practicas.components.ActionButton
-import com.example.practicas.components.MainButton
-import com.example.practicas.components.Space
-import com.example.practicas.components.TextView
-import com.example.practicas.components.TitleBar
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,11 +42,11 @@ fun ContentHomeView(navController: NavController){
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row (modifier = Modifier.background(color = Color.Red)
+        Row (modifier = Modifier.background(color = Color(0xFFD0202D))
             .padding(50.dp)
             .fillMaxWidth()){ }
 
-        Row (modifier = Modifier.background(color = Color.Red)){
+        Row (modifier = Modifier.background(color = Color(0xFFD0202D))){
             val id = 1
             OutlinedButton(onClick = {
                 navController.navigate("SplIn/${id}")//"AFC")
@@ -73,7 +59,7 @@ fun ContentHomeView(navController: NavController){
         }
 
         Row (
-            modifier = Modifier.background(color = Color.Red)
+            modifier = Modifier.background(color = Color(0xFFD0202D))
                 .fillMaxWidth()
                 .padding(10.dp),
             horizontalArrangement = Arrangement.Center){
@@ -97,7 +83,7 @@ fun ContentHomeView(navController: NavController){
         }
 
         Row (
-            modifier = Modifier.background(color = Color.Blue)
+            modifier = Modifier.background(color = Color(0xFF12316A))
                 .fillMaxWidth()
                 .padding(5.dp),
             horizontalArrangement = Arrangement.Center){
@@ -107,7 +93,7 @@ fun ContentHomeView(navController: NavController){
             )
         }
 
-        Row (modifier = Modifier.background(color = Color.Blue)
+        Row (modifier = Modifier.background(color = Color(0xFF12316A))
             .padding(10.dp)){
             val id = 2
             OutlinedButton(onClick = {
@@ -120,7 +106,7 @@ fun ContentHomeView(navController: NavController){
             }
         }
 
-        Row (modifier = Modifier.background(color = Color.Blue)
+        Row (modifier = Modifier.background(color = Color(0xFF12316A))
             .padding(55.dp)
             .fillMaxWidth()){ }
     }

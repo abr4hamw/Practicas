@@ -3,51 +3,25 @@ package com.example.practicas.view
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.practicas.R
-import com.example.practicas.components.ImagenPrincipal
-import com.example.practicas.components.MainIconButton
+import com.example.practicas.components.R2
 import com.example.practicas.components.RC
 import com.example.practicas.components.Ro
 import com.example.practicas.components.Space
-import com.example.practicas.components.TextView
-import com.example.practicas.components.TitleBar
+import com.example.practicas.components.scafll
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun KCView(navController: NavController){
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = { TitleBar("Chiefs") },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
-                )
-                ,navigationIcon= {
-                    MainIconButton(icon = Icons.Default.ArrowBack) {
-                        navController.navigate("AFC")
-                    }
-                }
-            )
-        }
-    ){
-        ContentKCView(navController)
-    }
+    scafll(navController,"Chiefs",Color.Red, "AFC",{ContentKCView(it)})
 }
 
 @Composable
@@ -59,20 +33,8 @@ fun ContentKCView(navController: NavController){
         modifier = Modifier.fillMaxWidth()
     ){
         Space(80)
-        Row (
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ){
-            ImagenPrincipal(R.drawable.chiefss)
-        }
 
-        Row (
-            modifier = Modifier.padding(40.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ){
-            TextView("Kansas City")
-        }
+        R2(R.drawable.chiefss, "Kansas City")
 
         RC("Año: ", "1960")
 
